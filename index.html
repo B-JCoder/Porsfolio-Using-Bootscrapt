@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Link to your custom CSS -->
+    <title>My Portfolio</title>
+    <style>
+      /* General Styles */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa;
+        color: #343a40;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      h3,
+      h4,
+      h5 {
+        color: #007bff;
+      }
+
+      /* Header Section */
+      header {
+        background: linear-gradient(to right, #007bff, #00c6ff);
+        padding: 80px 0;
+      }
+
+      header h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      header p {
+        font-size: 1.5rem;
+      }
+
+      /* About Section */
+      #about {
+        background-color: #ffffff;
+      }
+
+      #about img {
+        max-width: 100%;
+        border: 5px solid #007bff;
+      }
+
+      /* Services Section */
+      #services {
+        background-color: #e9ecef;
+      }
+
+      #services h4 {
+        margin-top: 15px;
+        font-weight: bold;
+      }
+
+      /* Skills Section */
+      #skills {
+        background-color: #ffffff;
+      }
+
+      .progress {
+        background-color: #e9ecef;
+      }
+
+      .progress-bar {
+        background-color: #007bff;
+      }
+
+      /* Portfolio Section */
+      #portfolio {
+        background-color: #ffffff;
+      }
+
+      .portfolio-item {
+        margin-bottom: 30px;
+        transition: transform 0.3s;
+      }
+
+      .portfolio-item:hover {
+        transform: scale(1.05);
+      }
+
+      /* Contact Section */
+      #contact {
+        background-color: #e9ecef;
+      }
+
+      /* Footer Section */
+      footer {
+        background-color: #343a40;
+        color: #ffffff;
+      }
+
+      footer h2 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+      }
+
+      .social-icons a {
+        font-size: 1.5rem;
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2.5rem;
+        }
+
+        header p {
+          font-size: 1.2rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        h3,
+        h4,
+        h5 {
+          font-size: 1.5rem;
+        }
+      }
+      .portfolio-section {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: flex-start; /* Align items to the start of the flex container */
+  padding: 20px; /* Add padding around the section */
+  margin: 20px 0; /* Add vertical margin for spacing */
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+}
+
+.portfolio-section h3 {
+  font-size: 2rem; /* Increase the heading size */
+  margin-bottom: 15px; /* Add space below the heading */
+  text-align: center; /* Center the heading text */
+}
+
+.portfolio-section p {
+  font-size: 1rem; /* Set a comfortable font size for readability */
+  line-height: 1.6; /* Increase line height for better readability */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  text-align: justify; /* Justify the paragraph text for a cleaner look */
+}
+
+.col-md-6 {
+  flex: 0 0 50%; /* Make each column take up 50% of the container */
+  max-width: 50%; /* Set a maximum width of 50% */
+  box-sizing: border-box; /* Include padding and margin in total width */
+  padding: 15px; /* Add padding inside the column */
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 100%; /* Stack columns on smaller screens */
+    max-width: 100%; /* Set maximum width to 100% */
+  }
+}
+#about {
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 50px 0; /* Top and bottom padding for the section */
+}
+
+#about h2 {
+  font-size: 2.5rem; /* Larger font size for the heading */
+  margin-bottom: 30px; /* Space below the heading */
+}
+
+#about .row {
+  margin: 0; /* Reset row margin */
+}
+
+#about .col-md-6 {
+  padding: 15px; /* Padding for columns */
+}
+
+#about img {
+  max-width: 400px; /* Set a maximum width for the profile image */
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+#about h3 {
+  text-align: center; /* Center the subheading */
+  margin-top: 20px; /* Space above the subheading */
+}
+
+
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="bg-dark text-white text-center py-5">
+      <h1 class="display-4">Muhammad Bilal</h1>
+      <p class="lead">Web Developer & Designer</p>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Portfolio</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="text-center">About Me</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <img
+              src="bilal pic responsive - Copy.jpg"
+              class="img-fluid rounded-circle"
+              alt="Profile Image"
+            />
+          </div>
+          <div class="col-md-6">
+            <h3>Welcome to My Portfolio</h3>
+            <p>
+              As a dedicated and passionate web developer, I thrive on the
+              challenge of crafting dynamic and responsive websites that deliver
+              exceptional user experiences. With a solid foundation in modern
+              technologies such as HTML, CSS, JavaScript, and popular frameworks
+              like React and Bootstrap, I bring innovative ideas to life. My
+              journey in web development has equipped me with the skills to
+              transform concepts into functional, aesthetically pleasing web
+              applications. I take pride in my ability to adapt to the
+              ever-evolving tech landscape, continuously learning and
+              integrating the latest tools and best practices into my work.
+              Whether collaborating with a team or working independently, I am
+              committed to developing solutions that not only meet but exceed
+              client expectations. My passion for web development drives me to
+              create seamless, user-friendly interfaces that engage users and
+              foster a connection with the digital world.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center">My Services</h2>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <i class="fas fa-code fa-3x"></i>
+            <h4>Web Development</h4>
+            <p>Building responsive and efficient websites.</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <i class="fas fa-paint-brush fa-3x"></i>
+            <h4>UI/UX Design</h4>
+            <p>Creating user-friendly designs for a better experience.</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <i class="fas fa-mobile-alt fa-3x"></i>
+            <h4>Mobile Development</h4>
+            <p>Developing applications for mobile devices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Skills Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center">My Skills</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Technical Skills</h5>
+            <div class="progress mb-3">
+              <div class="progress-bar" style="width: 80%">HTML</div>
+            </div>
+            <div class="progress mb-3">
+              <div class="progress-bar" style="width: 70%">CSS</div>
+            </div>
+            <div class="progress mb-3">
+              <div class="progress-bar" style="width: 75%">JavaScript</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5>Professional Skills</h5>
+            <div class="progress mb-3">
+              <div class="progress-bar" style="width: 90%">Team Work</div>
+            </div>
+            <div class="progress mb-3">
+              <div class="progress-bar" style="width: 85%">Time Management</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center">My Projects</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="portfolio-item">
+              <img
+                src="https://img.freepik.com/free-psd/american-food-website-app-template_23-2148477329.jpg?uid=R159652736&ga=GA1.1.2060820202.1709395257&semt=ais_hybrid"
+                class="img-fluid"
+                alt="Project 1"
+              />
+              <h5>Project Title 1</h5>
+              <p>Short description of Project 1.</p>
+              <a href="#" class="btn btn-primary">View Project</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="portfolio-item">
+              <img
+                src="https://img.freepik.com/free-psd/restaurant-landing-page-template_23-2148466849.jpg?uid=R159652736&ga=GA1.1.2060820202.1709395257&semt=ais_hybrid"
+                class="img-fluid"
+                alt="Project 2"
+              />
+              <h5>Project Title 2</h5>
+              <p>Short description of Project 2.</p>
+              <a href="#" class="btn btn-primary">View Project</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="portfolio-item">
+              <img
+                src="https://img.freepik.com/free-psd/veterinary-landing-pages-concept_23-2148451973.jpg?uid=R159652736&ga=GA1.1.2060820202.1709395257&semt=ais_hybrid"
+                class="img-fluid"
+                alt="Project 3"
+              />
+              <h5>Project Title 3</h5>
+              <p>Short description of Project 3.</p>
+              <a href="#" class="btn btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center">Contact Me</h2>
+        <form
+          action="mailto:bilalcodes777@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              name="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-4">
+      <h2>© 2024 Muhammad Bilal. All rights reserved.</h2>
+      <div class="social-icons">
+        <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <!-- Link to your JavaScript file -->
+  </body>
+</html>
